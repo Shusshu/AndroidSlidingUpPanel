@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.sothree.slidinguppanel</groupId>
         <artifactId>parent</artifactId>
-        <version>1.0.0.20131107c</version>
+        <version>1.0.0.20131108</version>
     </parent>
 
     <artifactId>demo</artifactId>

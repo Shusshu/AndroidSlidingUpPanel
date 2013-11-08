@@ -15,7 +15,7 @@
     <name>Android Sliding Up Panel</name>
     <url>https://github.com/umano/AndroidSlidingUpPanel/</url>
     <inceptionYear>2013</inceptionYear>
-    <version>1.0.0.20131107c</version>
+    <version>1.0.0.20131108</version>
 
     <modules>
         <module>library</module>
