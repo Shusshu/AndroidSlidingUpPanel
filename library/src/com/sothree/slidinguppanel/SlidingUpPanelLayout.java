@@ -80,6 +80,9 @@ public class SlidingUpPanelLayout extends ViewGroup {
      */
     private boolean mCanSlide;
 
+
+    private boolean mDrawScrim = true;
+
     /**
      * If provided, the panel can be dragged by only this view. Otherwise, the entire panel can be
      * used for dragging.
@@ -754,6 +757,10 @@ public class SlidingUpPanelLayout extends ViewGroup {
                 && mSlideOffset == (float)anchoredTop/(float)mSlideRange;
     }
 
+    public void drawScrim(boolean draw) {
+        mDrawScrim = draw;
+    }
+
     /**
      * Check if the content in this layout cannot fully fit side by side and therefore
      * the content pane can be slid back and forth.
@@ -818,7 +825,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
         result = super.drawChild(canvas, child, drawingTime);
         canvas.restoreToCount(save);
 
-        if (drawScrim) {
+        if (drawScrim && mDrawScrim) {
             final int baseAlpha = (mCoveredFadeColor & 0xff000000) >>> 24;
             final int imag = (int) (baseAlpha * (1 - mSlideOffset));
             final int color = imag << 24 | (mCoveredFadeColor & 0xffffff);
