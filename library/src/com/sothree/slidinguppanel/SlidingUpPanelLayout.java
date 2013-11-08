@@ -649,18 +649,17 @@ public class SlidingUpPanelLayout extends ViewGroup {
             return super.onTouchEvent(ev);
         }
 
-        mDragHelper.processTouchEvent(ev);
-
         final int action = ev.getAction();
         boolean wantTouchEvents = true;
 
         switch (action & MotionEventCompat.ACTION_MASK) {
             case MotionEvent.ACTION_DOWN: {
+                mDragHelper.processTouchEvent(ev);
                 final float x = ev.getX();
                 final float y = ev.getY();
                 mInitialMotionX = x;
                 mInitialMotionY = y;
-                break;
+                return wantTouchEvents;
             }
 
             case MotionEvent.ACTION_UP: {
@@ -678,12 +677,13 @@ public class SlidingUpPanelLayout extends ViewGroup {
                     } else {
                         collapsePane();
                     }
-                    break;
+                    return wantTouchEvents;
                 }
                 break;
             }
         }
 
+        mDragHelper.processTouchEvent(ev);
         return wantTouchEvents;
     }
 
