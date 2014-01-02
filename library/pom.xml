@@ -4,11 +4,11 @@
     <parent>
         <groupId>com.sothree.slidinguppanel</groupId>
         <artifactId>parent</artifactId>
-        <version>1.0.0.20131108</version>
+        <version>1.0.0.20140102</version>
     </parent>
 
     <artifactId>slidinguppanel</artifactId>
-    <packaging>apklib</packaging>
+    <packaging>aar</packaging>
 
     <name>Android Sliding Up Panel (Library)</name>
 
